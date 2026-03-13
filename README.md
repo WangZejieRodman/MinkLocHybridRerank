@@ -73,7 +73,3 @@ python training/train_cyd_hybrid.py
 ```bash
 python eval/evaluate_cyd_JointScore.py
 ```
-
-```
-
-```
