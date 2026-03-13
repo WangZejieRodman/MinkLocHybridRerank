@@ -53,7 +53,6 @@ CYD/cyd_NoRot_NoScale/
   │   ├── pointcloud_20m_10overlap/100001.bin
   │   └── centerline/100001_centerline.txt
   └── pointcloud_locations_20m_10overlap.csv
-
 ```
 
 **2. 生成训练/测试元数据**
@@ -61,21 +60,18 @@ CYD/cyd_NoRot_NoScale/
 ```bash
 python datasets/cyd/generate_training_tuples_cyd.py
 python datasets/cyd/generate_test_sets_cyd.py
-
 ```
 
 **3. 启动训练**
 
 ```bash
 python training/train_cyd_hybrid.py
-
 ```
 
 **4. 执行评估**
 
 ```bash
 python eval/evaluate_cyd_JointScore.py
-
 ```
 
 ```
