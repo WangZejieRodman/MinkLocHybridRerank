@@ -1,0 +1,29 @@
+[DEFAULT]
+dataset_folder=/home/wzj/pan2/巷道/CYD/
+
+[TRAIN]
+batch_size=64
+batch_split_size=16
+
+lr=1e-3
+scheduler=MultiStepLR
+scheduler_milestones=20,30
+epochs=40
+weight_decay=1e-4
+
+loss=TruncatedSmoothAP
+positives_per_query=2
+tau1=0.01
+
+similarity=euclidean
+
+# 强制关闭几何数据增强，防止点云投影错位
+aug_mode=1
+set_aug_mode=1
+
+# 指向我们刚刚生成的 CYD 训练和验证字典
+train_file=/home/wzj/pan1/MinkLocBevCrossRerank-main/datasets/cyd/training_queries_cyd.pickle
+val_file=/home/wzj/pan1/MinkLocBevCrossRerank-main/datasets/cyd/test_queries_cyd.pickle
+
+num_workers=4
+save_freq=5

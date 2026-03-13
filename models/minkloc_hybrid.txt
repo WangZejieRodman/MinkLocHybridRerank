@@ -1,0 +1,20 @@
+[MODEL]
+model=MinkLocHybrid
+coarse_type=bev
+feature_size=256
+output_dim=256
+pooling=GeM
+normalize_embeddings=False
+slice_feature_dim=32
+
+# BEV 参数 (用于粗流，当 coarse_type=bev 时生效)
+coords_range_bev=-10.0, -10.0, -4.0, 10.0, 10.0, 8.0
+div_n_bev=256, 256, 32
+in_channels_bev=32
+
+# Cross-Section 参数 (用于精流，或者当 coarse_type=cross 时用于粗流)
+wz_range_cross=-10.0, -4.0, 10.0, 8.0
+s_range_cross=-12.0, 12.0
+s_thickness_cross=0.375
+div_n_cross=256, 32
+in_channels_cross=64
